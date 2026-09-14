@@ -1,125 +1,233 @@
-# trice
+# TRICE — Whole-Organism Bio-Inspired Computational Architecture
 
-## Project Vision
+## Non-Negotiable Engineering Rule
 
-**TRICE — Whole-Organism Bio-Inspired Computational Architecture**
+**Every modeled organ, tissue, cell type, molecular component, physiological pathway, neural subsystem, biochemical regulator, and system-level interaction must be represented by real executable code, a defined interface, or an explicitly tracked `ABSTRACTED` / `PLANNED` / `UNMODELED` status. Nothing may be silently omitted.**
 
-TRICE is a research-oriented software architecture exploring how principles from the human body can be translated into a unified adaptive computational organism. The project is inspired by second-generation biocomputing: rather than copying isolated biological metaphors, it models interacting biological systems, hierarchical organization, homeostasis, continual adaptation, and reconfiguration as computational primitives.
+TRICE is a research software platform for constructing a computational organism inspired by the human body. The implementation target is a **real, runnable, testable simulator**, not a mock UI and not a fake demo. Where science does not yet provide an exact mechanistic model—especially consciousness and subjective experience—the software must state the limitation rather than inventing false biological equivalence.
 
-> **Core rule: whole-body coverage.** Every major biological layer—from atoms and molecules through organelles, cells, tissues, organs, organ systems, brain dynamics, cognition, and organism-level regulation—must have an explicit representation or documented abstraction. No body system is intentionally omitted from the architecture.
+## Whole-Body Coverage
 
-## Biological Coverage Target
+TRICE tracks the body from physical chemistry through organism-level behavior:
 
-TRICE's reference map is deliberately comprehensive and includes, at minimum:
+### Physical and chemical substrate
+Atoms, ions, isotopes where relevant, water, electrolytes, minerals, vitamins, amino acids, peptides, lipids, carbohydrates, nucleotides, metabolites, gases, pH, osmotic state, temperature, chemical gradients, energy and thermodynamic/resource state.
 
-- **Physical/chemical layer:** atoms, ions, molecules, amino acids, lipids, proteins, enzymes, water, electrolytes, minerals, vitamins and energy/thermodynamic state.
-- **Genetic/molecular layer:** DNA, genes, regulatory regions, RNA, transcription/translation, ribosomes, proteins, epigenetic state, molecular signalling and genome organization/reconfiguration.
-- **Cellular layer:** nucleus, mitochondria, membranes, cytoskeleton, lysosomes, peroxisomes, endoplasmic reticulum, Golgi apparatus, ribosomes, vesicles and cellular signalling.
-- **Blood/immune layer:** RBCs, WBCs, platelets, plasma, hemoglobin, clotting, innate/adaptive immunity, immune memory, cytokine-style signalling and immune surveillance.
-- **Nervous layer:** neurons, dendrites, axons, synapses, action potentials/electrical impulses, neurotransmitters, glial cells, sensory pathways, autonomic control and neuromodulation.
-- **Brain/cognition layer:** perception, attention, learning, memory, hippocampal-style memory functions, prefrontal executive control, amygdala-style threat/value processing, reward, stress, emotion and conscious-state variables as computational abstractions.
-- **Endocrine/metabolic layer:** hormones, feedback loops, energy balance, stress regulation, endocrine signalling and metabolic state.
-- **Cardiovascular layer:** heart, chambers, valves, blood flow, oxygen/nutrient transport and vascular regulation.
-- **Respiratory layer:** lungs, airways, gas exchange, oxygen/carbon-dioxide transport and respiratory control.
-- **Digestive layer:** mouth, esophagus, stomach, intestine, liver, pancreas, gallbladder, nutrient absorption and microbiome-facing interfaces.
-- **Renal/excretory layer:** kidneys, filtration, electrolyte/water balance, acid-base regulation and waste handling.
-- **Musculoskeletal/motor layer:** bones, joints, skeletal muscles, tendons/ligaments, motor control, proprioception and movement.
-- **Integumentary/sensory layer:** skin, temperature regulation, touch, pain, pressure and environmental sensing.
-- **Reproductive/developmental layer:** reproductive organs and life-cycle/developmental state representations where relevant to the model.
-- **System-level regulation:** homeostasis, adaptation, fault tolerance, resource allocation, stress response, recovery, distributed control and whole-organism state transitions.
+### Molecular and genetic layer
+DNA, chromosomes, genes, regulatory DNA, RNA, transcription, translation, codons, ribosomes, proteins, enzymes, receptors, ligands, epigenetic state, methylation-style state, gene regulation, signaling molecules, genome organization, molecular damage and repair abstractions.
 
-This list is a **minimum reference map**, not a claim that human biology has been fully reproduced. New biological structures, pathways, interactions and levels should be added as the research model expands.
+### Cellular layer
+Cell membrane, cytoplasm, nucleus, nucleolus, mitochondria, ribosomes, rough/smooth ER, Golgi, lysosomes, peroxisomes, endosomes, vesicles, cytoskeleton, centrosomes, cellular transport, apoptosis-style state, cell cycle, membrane potentials, intracellular signaling and cell-cell communication.
 
-## Computational Principles
+### Blood and immune layer
+Plasma, red blood cells, hemoglobin, white blood cells, neutrophils, monocytes/macrophages, dendritic-cell abstractions, B cells, T cells, NK-cell abstractions, platelets, clotting, complement-style surveillance, innate/adaptive immunity, immune memory, inflammation, cytokine-style signaling, antigen recognition and self/non-self abstractions.
 
-TRICE explores a set of computational primitives inspired by biology:
+### Nervous system
+Neurons, sensory neurons, interneurons, motor neurons, dendrites, axons, myelin, nodes of Ranvier, synapses, presynaptic/postsynaptic state, action potentials, electrical impulses, synaptic plasticity, long-term potentiation/depression abstractions, autonomic nervous system, sympathetic/parasympathetic regulation, neuromodulation and peripheral nerves.
 
-1. **Homeostatic state regulation** — maintain stable internal variables under changing inputs.
-2. **Neural dynamics** — stateful signal propagation, synaptic plasticity and temporal processing.
-3. **Immune-style surveillance** — anomaly detection, self/non-self abstraction, quarantine and recovery.
-4. **Endocrine-style global modulation** — slower control signals that change system-wide behaviour.
-5. **Memory consolidation and decay** — context-sensitive storage, retrieval and adaptive forgetting.
-6. **Energy-aware computation** — computation competes for a finite energy/resource budget.
-7. **Hierarchical modularity** — molecular, cellular, organ and organism levels interact without requiring a single monolithic controller.
-8. **Continuous adaptation** — the system may continue learning/reconfiguring after deployment.
-9. **Evolutionary search** — candidate configurations can be generated, evaluated and selected.
-10. **Fault tolerance** — damaged or ineffective computational modules can be isolated, reconfigured or replaced in simulation.
-11. **Emergent interaction** — higher-level behaviour should emerge from coupled subsystems rather than be hard-coded as a single rule.
-12. **Open-ended research** — the architecture should be extensible as new biological mechanisms become computationally useful.
+### Brain and cognition
+Brain regions and networks are represented as computational abstractions where mechanistic detail is unavailable. Coverage includes cortex, prefrontal executive control, hippocampal memory functions, amygdala-style threat/value processing, thalamic relay abstraction, hypothalamic regulation, basal-ganglia-style action selection, cerebellar motor-learning abstraction, brainstem/autonomic control, attention, perception, learning, memory, working memory, reward, stress, emotion, decision-making, sleep/wake state and conscious-state variables.
 
-## Proposed Mathematical Backbone
+**Consciousness is not claimed to be solved.** TRICE may model measurable/computational correlates and state variables, but must not claim subjective experience merely because a simulator produces human-like outputs.
 
-A generic TRICE organism can be represented as a coupled dynamical system:
+### Endocrine and metabolic layer
+Hormonal signals, glands and hormone-like state channels including hypothalamic-pituitary control abstractions, thyroid/metabolic regulation, adrenal/stress signaling, pancreatic endocrine control, reproductive hormones, glucose regulation, energy balance, appetite, satiety, circadian modulation and slow global regulation.
 
-\[
-S_{t+1}=F(S_t, X_t, E_t, A_t, G_t)
-\]
+### Cardiovascular system
+Heart, atria, ventricles, valves, pacemaker/conduction abstractions, cardiac cycle, blood pressure, vascular resistance, arteries, veins, capillary exchange, oxygen delivery, nutrient delivery, venous return, perfusion and cardiovascular feedback regulation.
 
-\[
-Y_t=G(S_t, X_t)
-\]
+### Respiratory system
+Nose, airway, trachea, bronchi, bronchioles, lungs, alveolar gas exchange, diaphragm/respiratory-muscle abstraction, oxygen/carbon-dioxide transport, respiratory rate, ventilation/perfusion abstractions and respiratory control.
 
-Where:
+### Digestive and hepatobiliary system
+Mouth, teeth, tongue, salivary glands, pharynx, esophagus, stomach, small intestine, large intestine/colon, rectum, anus, liver, gallbladder, bile, pancreas, digestive enzymes, nutrient absorption, gut motility, gut hormones, microbiome-facing interfaces and nutrient/energy flux.
 
-- `S_t` = whole-organism internal state
-- `X_t` = sensory/external input
-- `E_t` = environment
-- `A_t` = active adaptive/reconfiguration state
-- `G_t` = genome/configuration state
-- `Y_t` = observable output/action
+### Renal and urinary system
+Kidneys, nephrons as an abstraction, filtration, reabsorption, secretion, urine formation, electrolyte regulation, water balance, osmotic regulation, acid-base balance, waste handling and renal-endocrine coupling.
 
-Subsystem states can be written as:
+### Musculoskeletal and motor system
+Bones, joints, cartilage, skeletal muscles, muscle fibers as a computational abstraction, tendons, ligaments, motor units, force generation, posture, balance, proprioception, reflexes and movement planning/execution.
 
-\[
-S_t=[N_t,I_t,H_t,M_t,\,E_t^{met},C_t,Q_t,\ldots]
-\]
+### Integumentary and sensory systems
+Skin, barrier function, temperature regulation, touch, pressure, vibration, pain, itch, thermosensation, visual, auditory, olfactory, gustatory and vestibular sensory abstractions.
 
-representing neural, immune, hormonal, memory, metabolic, cardiovascular/respiratory and other coupled state variables.
+### Reproductive and developmental systems
+Reproductive organs, gamete-state abstractions, hormonal control, life-cycle state and development. Sexual/reproductive biology is represented only at the level required by the computational model; TRICE is not a biological reproduction system.
 
-These equations are **research abstractions**, not biological claims of exact equivalence to a human body.
+### Whole-organism regulation
+Homeostasis, allostasis-style adaptation, energy allocation, stress response, sleep/recovery, circadian state, immune-neural-endocrine coupling, fault detection, repair/reconfiguration, redundancy, resilience, learning and continual evolution.
 
-## Architecture Direction
+## Architecture
 
 ```text
-PHYSICAL / CHEMICAL STATE
-        ↓
-MOLECULAR / GENETIC STATE
-        ↓
-CELLULAR STATE
-        ↓
-TISSUE STATE
-        ↓
-ORGAN STATE
-        ↓
-ORGAN-SYSTEM STATE
-        ↓
-NEURAL / IMMUNE / ENDOCRINE COUPLING
-        ↓
-COGNITION / MEMORY / EMOTION / ACTION
-        ↓
-WHOLE-ORGANISM HOMEOSTASIS
-        ↓
-CONTINUAL ADAPTATION / EVOLUTION
+                 ENVIRONMENT
+                     │
+               SENSORY INPUTS
+                     │
+                     ▼
+          ┌─────────────────────┐
+          │ PERIPHERAL REGULATOR│
+          └──────────┬──────────┘
+                     │
+       ┌─────────────┼─────────────┐
+       ▼             ▼             ▼
+    NEURAL         IMMUNE       ENDOCRINE
+       │             │             │
+       └─────────────┼─────────────┘
+                     ▼
+              WHOLE-BODY STATE
+                     │
+       ┌─────────────┼─────────────┐
+       ▼             ▼             ▼
+ CARDIOVASCULAR  RESPIRATORY   METABOLIC/DIGESTIVE
+       │             │             │
+       └─────────────┼─────────────┘
+                     ▼
+              KIDNEY / FLUID
+                     │
+                     ▼
+            MUSCULOSKELETAL / ACTION
+                     │
+                     ▼
+          MEMORY / LEARNING / POLICY
+                     │
+                     ▼
+         ADAPTATION / RECONFIGURATION
+                     │
+                     └─────── feedback ───────►
 ```
 
-The intended implementation is a **software simulation and research framework first**. It should not be interpreted as a complete digital replica of a human, nor as a method for creating a biological human.
+Every subsystem exposes typed state and event interfaces. Cross-system coupling is explicit and testable.
 
-## Research Scope
+## Mathematical Core
 
-TRICE will investigate:
+The organism state is modeled as a coupled dynamical system:
 
-- new computational operators inspired by biological regulation;
-- coupled neural-immune-endocrine models;
-- adaptive memory and homeostasis;
-- evolutionary and reconfigurable model architectures;
-- energy/resource-aware computation;
-- multi-scale simulation from molecular abstractions to organism-level behaviour;
-- reproducible benchmarks comparing TRICE mechanisms with conventional AI baselines.
+\[
+S_{t+1}=F(S_t,X_t,E_t,A_t,G_t,R_t)
+\]
 
-## Completeness Requirement
+\[
+Y_t=G(S_t,X_t)
+\]
 
-**No deliberate omission policy:** whenever a new version adds biological coverage, update the system map and documentation. If a biological component is not yet modeled, it must be marked explicitly as `UNMODELED`, `ABSTRACTED`, or `PLANNED` rather than silently omitted.
+where `S` is whole-organism state, `X` sensory/input state, `E` environment, `A` adaptive state, `G` configuration/genome state, `R` resource/energy state, and `Y` outputs/actions.
 
-## Research Safety
+Subsystems may be represented as:
 
-TRICE is intended for computational research, simulation, systems design, and literature-driven hypothesis generation. Any future work involving living cells, genetic modification, pathogens, or other wet-lab systems must be handled separately under appropriate institutional biosafety, ethics, and regulatory oversight.
+\[
+S_t = [N_t,I_t,H_t,M_t,C_t,R_t,B_t,V_t,D_t,K_t,MU_t,SE_t,DEV_t,\ldots]
+\]
+
+covering neural, immune, hormonal, memory, cardiovascular, respiratory, metabolic/digestive, renal, musculoskeletal, sensory and developmental state.
+
+### Homeostatic regulation
+
+For a regulated variable `z` with target `z*`:
+
+\[
+e_t=z^*-z_t
+\]
+
+\[
+z_{t+1}=z_t+\alpha e_t+\beta u_t+\eta_t
+\]
+
+Parameters are computational model parameters and must not be presented as measured human physiological constants unless independently sourced.
+
+### Energy-aware computation
+
+\[
+R_{t+1}=R_t+R_{in}-R_{basal}-R_{compute}-R_{action}
+\]
+
+Low-resource states can modulate processing priority, memory consolidation, exploration and recovery.
+
+### Coupled neuro-immune-endocrine dynamics
+
+\[
+\begin{bmatrix}N\\I\\H\end{bmatrix}_{t+1}
+=
+\Phi\left(\begin{bmatrix}N\\I\\H\end{bmatrix}_t,X_t,E_t\right)
+\]
+
+This is a research abstraction for coupled regulation, not an exact biological model.
+
+### Memory
+
+TRICE supports dynamic memory with encoding, retrieval, context weighting and decay. Emotional/reward-like state may modulate computational priority without claiming equivalence to subjective human emotion.
+
+## Research Principles
+
+1. **Whole-body coverage first.** No subsystem is silently skipped.
+2. **Real executable implementation.** No fake buttons, placeholder demos or simulated success messages.
+3. **Scientific honesty.** Approximation must be labeled as approximation.
+4. **Modularity.** Every system can be independently tested.
+5. **Bidirectional coupling.** Biological systems influence one another.
+6. **Homeostasis.** The system regulates internal variables rather than only mapping input to output.
+7. **Continual adaptation.** Learning and reconfiguration may continue after deployment.
+8. **Evolutionary search.** Candidate configurations can mutate/recombine and be evaluated computationally.
+9. **Fault tolerance.** Components can be isolated and recovery policies evaluated.
+10. **Benchmarking.** Every new mechanism needs tests and baseline comparisons.
+11. **Traceability.** Each biological claim maps to documentation/reference metadata.
+12. **Safe research boundary.** Any future wet-lab work is separate from the software project and requires appropriate institutional oversight.
+
+## Implementation Roadmap
+
+### Phase 1 — Core simulator
+- typed state model
+- event bus
+- deterministic simulation clock
+- resource/energy accounting
+- organism registry
+- subsystem interfaces
+- unit/integration tests
+
+### Phase 2 — Whole-body system registry
+- complete organ and subsystem inventory
+- status for every component: `IMPLEMENTED`, `ABSTRACTED`, `PLANNED`, `UNMODELED`
+- dependency graph between systems
+- coverage validation tests
+
+### Phase 3 — Neural/immune/endocrine integration
+- temporal neural state engine
+- immune surveillance and memory
+- slow hormonal modulation
+- coupled feedback loops
+- stress/recovery states
+
+### Phase 4 — Organ-level dynamics
+- cardiovascular
+- respiratory
+- digestive/hepatobiliary
+- renal/fluid
+- musculoskeletal/motor
+- sensory/integrative systems
+
+### Phase 5 — Adaptive cognition
+- perception
+- attention
+- memory
+- action selection
+- learning
+- reward/value state
+- sleep/recovery simulation
+
+### Phase 6 — Evolution and reconfiguration
+- mutation/recombination operators
+- modular architecture search
+- fault injection and recovery
+- continual adaptation benchmarks
+
+### Phase 7 — Scientific validation
+- literature-linked parameter sets
+- benchmark suite
+- reproducible experiments
+- comparison with conventional AI architectures
+- uncertainty/error reporting
+
+## Completeness Registry
+
+The repository must contain a machine-readable inventory for every biological component modeled or planned. CI should fail when a newly introduced module is not registered, when a declared dependency is missing, or when a component is marked `IMPLEMENTED` without tests.
+
+**A new body part is never “forgotten later”: it must enter the registry first.**
