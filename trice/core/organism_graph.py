@@ -1,11 +1,12 @@
 """Explicit dependency graph for whole-organism coupling.
 
-The graph is intentionally computational: edges describe information/state
-coupling in the simulator and do not claim anatomical identity.
+The graph is computational: edges describe information/state coupling in the
+simulator and do not claim anatomical identity or physiological equivalence.
 """
 from __future__ import annotations
 
 from dataclasses import dataclass
+from math import isfinite
 from typing import Iterable
 
 
@@ -15,6 +16,12 @@ class Coupling:
     target: str
     channel: str
     weight: float = 1.0
+
+    def __post_init__(self) -> None:
+        if not self.source.strip() or not self.target.strip() or not self.channel.strip():
+            raise ValueError("coupling source, target, and channel must be non-empty")
+        if not isfinite(float(self.weight)):
+            raise ValueError("coupling weight must be finite")
 
 
 DEFAULT_COUPLINGS: tuple[Coupling, ...] = (
@@ -41,8 +48,13 @@ DEFAULT_COUPLINGS: tuple[Coupling, ...] = (
 
 
 class OrganismGraph:
+    """Validated immutable coupling topology for a TRICE organism."""
+
     def __init__(self, couplings: Iterable[Coupling] = DEFAULT_COUPLINGS) -> None:
         self._couplings = tuple(couplings)
+        keys = [(c.source, c.target, c.channel) for c in self._couplings]
+        if len(keys) != len(set(keys)):
+            raise ValueError("duplicate organism coupling")
 
     def neighbors(self, source: str) -> tuple[str, ...]:
         return tuple(c.target for c in self._couplings if c.source == source)
