@@ -1,0 +1,6 @@
+pipeline: trice-training
+steps:
+  - prepare
+  - train
+  - evaluate
+  - export
