@@ -1,0 +1,4 @@
+framework: pytorch
+strategy: deepspeed
+engine: zero3
+precision: bf16
