@@ -1,0 +1,2 @@
+backend: dask
+workers: 1
