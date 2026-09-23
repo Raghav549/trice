@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "trice"
-version = "0.2.0"
-description = "Whole-organism bio-inspired computational architecture"
+version = "0.3.0"
+description = "Whole-organism computational simulation and AI research framework"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {file = "LICENSE"}
@@ -22,8 +22,26 @@ classifiers = [
 dependencies = []
 
 [project.optional-dependencies]
-dev = [
+numeric = ["numpy>=1.24"]
+ml = ["torch>=2.1", "jax>=0.4", "tensorflow>=2.14"]
+data = ["pandas>=2.0", "polars>=0.20"]
+distributed = ["ray>=2.8", "dask[complete]>=2023.10", "pyspark>=3.5"]
+tracking = ["wandb>=0.16", "mlflow>=2.9"]
+tests = ["pytest>=8", "pytest-cov>=5", "ruff>=0.8", "mypy>=1.13", "build>=1.2", "twine>=6"]
+all = [
+  "numpy>=1.24",
+  "torch>=2.1",
+  "jax>=0.4",
+  "tensorflow>=2.14",
+  "pandas>=2.0",
+  "polars>=0.20",
+  "ray>=2.8",
+  "dask[complete]>=2023.10",
+  "pyspark>=3.5",
+  "wandb>=0.16",
+  "mlflow>=2.9",
   "pytest>=8",
+  "pytest-cov>=5",
   "ruff>=0.8",
   "mypy>=1.13",
   "build>=1.2",
