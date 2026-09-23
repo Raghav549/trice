@@ -1,0 +1,2 @@
+backend: spark
+workers: 1
