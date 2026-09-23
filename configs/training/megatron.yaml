@@ -1,0 +1,5 @@
+framework: pytorch
+strategy: megatron
+tensor_parallel: 1
+pipeline_parallel: 1
+precision: bf16
