@@ -1,5 +1,8 @@
 """TRICE core simulation primitives."""
 
+from .backends import CPUBackend, TorchBackend, get_backend
+from .body_cycle import FullBodyCycle
+from .coupling import Coupling, CouplingGraph
 from .energy import EnergyBudget
 from .homeostasis import HomeostasisEngine, HomeostaticTarget
 from .module import BodyModule, ModuleContext, StatefulModule
@@ -13,4 +16,10 @@ __all__ = [
     "ModuleContext",
     "OrganismState",
     "StatefulModule",
+    "FullBodyCycle",
+    "Coupling",
+    "CouplingGraph",
+    "CPUBackend",
+    "TorchBackend",
+    "get_backend",
 ]
