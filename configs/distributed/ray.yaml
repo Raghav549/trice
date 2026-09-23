@@ -1,0 +1,2 @@
+backend: ray
+workers: 1
