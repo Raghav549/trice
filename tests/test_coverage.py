@@ -1,3 +1,4 @@
+from trice.core.coverage import missing_tests, status_counts
 from trice.systems.whole_body import COMPONENTS, CoverageStatus, coverage_map
 
 
@@ -20,3 +21,13 @@ def test_core_whole_body_components_are_registered():
         "immune_system", "endocrine_glands", "hippocampal_memory",
     }
     assert required.issubset(registry)
+
+
+def test_status_counts_and_missing_tests():
+    records = [
+        {"name": "heart", "status": "ABSTRACTED", "tests": ["test_heart.py"]},
+        {"name": "brain", "status": "PLANNED", "tests": []},
+        {"name": "skin", "status": "ABSTRACTED", "tests": ["test_skin.py"]},
+    ]
+    assert status_counts(records) == {"ABSTRACTED": 2, "PLANNED": 1}
+    assert missing_tests(records) == ("brain",)
