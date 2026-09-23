@@ -1,0 +1,5 @@
+framework: pytorch
+strategy: fsdp
+precision: bf16
+batch_size: 32
+epochs: 1
